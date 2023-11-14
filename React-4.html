@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <p id="display-text">상태가 비활성화 되어있습니다.</p>
+        <button id="toggle-button">상태 변경</button>
+    </div>
+    <script>
+        let stateData = {
+            isActive: false
+        };
+
+        const button = document.getElementById('toggle-button');
+        const displayText = document.getElementById('display-text');
+
+        button.addEventListener('click',()=>{
+            if(stateData.isActive){
+                stateData.isActive = false;
+            } else {
+                stateData.isActive = true;
+            }
+            updateUI();
+        });
+
+        function updateUI(){
+            if(stateData.isActive){
+                displayText.textContent = "상태가 활성화 되어있습니다.";
+                displayText.style.color = "green";
+            } else {
+                displayText.textContent = "상태가 비활성화 되어있습니다.";
+                displayText.style.color = "red";
+            }
+        }
+
+        updateUI();
+    </script>
+</body>
+</html>
