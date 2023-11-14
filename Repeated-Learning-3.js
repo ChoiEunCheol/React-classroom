@@ -1,7 +1,9 @@
 class TitleManager {
   constructor(
     tagname,
-    stateDataObject = { basicTitle: "기본 제목", newTitle: "새로운 제목" }
+    stateDataObject 
+    // 지운 부분이 꼭 있어야 하나?
+    // 없어도 될 것 같긴한데 쓴 이유를 생각해보면 입력 서식을 알려주기 위해?
   ) {
     this._tagName = tagname;
     this._stateDataObject = stateDataObject;
